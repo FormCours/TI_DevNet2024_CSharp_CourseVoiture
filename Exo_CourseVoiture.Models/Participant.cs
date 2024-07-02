@@ -22,10 +22,10 @@ namespace Exo_CourseVoiture.Models
             double vitesse = Voiture.ObtenirVitesse(Pilote);
 
             // Longeur: km, vitesse: km/h => Longeur/vitesse: h  => h * 3600 : s
-            double temps = (circuit.Longueur / vitesse) * 3600;
+            double temps = Math.Round((circuit.Longueur / vitesse) * 3600, 2);
 
             _TempsTours.Add(nbTour, temps);
-            TempsTotal += temps;
+            TempsTotal = Math.Round(TempsTotal + temps, 2);
         }
     }
 }
